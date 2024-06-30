@@ -19,6 +19,3 @@ noteApp.listen(4001, () => {
     console.log("The app is listening")
 });
 
-
-
-// mongo atlas password: Q2NdJTxGFHWSRG8n
