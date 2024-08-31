@@ -10,4 +10,4 @@ const noteSchema = new Schema ({
     updatedAt: {type: Date, default: Date.now()}
 })
 
-export const noteModel = model('note', noteSchema);
+export const noteModel = model('Note', noteSchema);

@@ -1,21 +1,24 @@
 import express from "express";
 import 'dotenv/config'
 import { noteRouter } from "./routes/note_router.js";
-import { dbConnection } from "./db.js";
+import { dbConnection } from "./config/db.js";
+import { userRouter } from "./routes/user_routes.js";
 
 // Create the server
-const noteApp = express();
+const app = express();
 
 dbConnection();
 
 // Add the middleware
-noteApp.use(express.json());
+app.use(express.json());
 
 // Define routes
-noteApp.use(noteRouter)
+app.use('/api/v1', noteRouter)
+app.use('/api/v1', userRouter)
+
 
 // Listen to incoming requests
-noteApp.listen(4001, () => {
+app.listen(4001, () => {
     console.log("The app is listening")
 });
 
